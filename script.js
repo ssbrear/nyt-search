@@ -3,15 +3,22 @@ var searchTerm = "";
 var queryURL = "";
 var numRecords = 0;
 var articlesHere = $("#articles-here");
-var startYear = 0;
-var endYear = 0;
+var startYear = "";
+var endYear = "";
 
 function updateQuery() {
     searchTerm = $("#search").val();
     numRecords = $("#num-records").val();
     startYear = $("#start-year").val();
     endYear = $("#end-year").val();
-    queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + startYear + "0101&end_date=" + endYear + "0101&q=" + searchTerm + "&api-key=" + API_KEY;
+    queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?"
+    if (startYear.length > 0) {
+        queryURL += ("begin_date=" + startYear + "0101&");
+    }
+    if (endYear.length > 0) {
+        queryURL += ("end_date=" + endYear + "0101&");
+    }
+    queryURL += ("q=" + searchTerm + "&api-key=" + API_KEY);
 }
 
 function clearQuery() {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><strong>
+                <i class="fa fa-newspaper-o"></i>
+                New York Times Search
+            </strong></h1>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title p-2"><strong>
+                            <i class="fa fa-list-alt"></i>
+                            Search Parameters
+                        </strong></h3>
+                    </div>
+                    <div class="panel-body py-2">
+                        <form>
+                            <div class="form-group px-4">
+                                <label>Search Term:</label>
+                                <input type="text" class="form-control" id="search">
+                            </div>
+                            <div class="form-group px-4">
+                                <label>Number of Records to Retrieve:</label>
+                                <select class="form-control" id="num-records">
+                                    <option value="1">1</option>
+                                    <option value="5" selected>5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="form-group px-4">
+                                <label>Start Year (Optional):</label>
+                                <input type="text" class="form-control" id="start-year">
+                            </div>
+                            <div class="form-group px-4">
+                                <label>End Year (Optional):</label>
+                                <input type="text" class="form-control" id="end-year">
+                            </div>
+                            <div class="form-group px-4">
+                                <button type="submit" id="submit-button" class="btn btn-secondary">
+                                    <i class="fa fa-search"></i>
+                                    Search
+                                </button>
+                                <button type="submit" id="clear-button" class="btn btn-secondary">
+                                    <i class="fa fa-trash"></i>
+                                    Clear Results
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title p-2"><strong>
+                            <i class="fa fa-table"></i>
+                            Top Articles
+                        </strong></h3>
+                    </div>
+                    <div class="panel-body" id="articles-here">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
